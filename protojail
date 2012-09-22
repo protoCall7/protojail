@@ -7,5 +7,12 @@ use warnings;
 use strict;
 use Protojail::Application;
 
+#-------------------------------------------------------------------------------
+#  Check for root privs.
+#-------------------------------------------------------------------------------
+my $name = `whoami`; 
+ 
+die "root priviledges required!\n" if $name ne "root";
+
 my $app = Protojail::Application->new();
 $app->run();
