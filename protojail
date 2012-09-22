@@ -11,7 +11,7 @@ use Protojail::Application;
 #  Check for root privs.
 #-------------------------------------------------------------------------------
 my $name = `whoami`; 
- 
+chomp $name;
 die "root priviledges required!\n" if $name ne "root";
 
 my $app = Protojail::Application->new();
